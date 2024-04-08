@@ -1,36 +1,54 @@
-*,
-body {
-    overflow: hidden;
+body,
+html {
+    height: 100%;
     margin: 0;
+    overflow: hidden;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
     font-weight: 500;
     font-style: normal;
 }
 
-.name1 {
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 53, 73, 1) 1%, rgba(11, 35, 44, 1) 40%, rgba(20, 20, 20, 1) 100%);
+}
+
+.left-item,
+.right-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name1{
     color: #d1d1d1;
     font-size: 3.5em;
-    
     text-shadow: 8px 6px 8px #0a0a0a;
+    margin: 0;
+    font-weight: 600;
 }
 
 .hi {
     font-size: 2em;
     color: #d1d1d1;
-    
+    margin: 0;
     text-shadow: 8px 6px 8px #0a0a0a;
 }
 
-.profile {
+.profilename {
     font-size: 1.6em;
     color: #28e7c4;
+    float: right;
+    margin: 0;
     text-shadow: 8px 6px 8px #0a0a0a;
 }
 
 .social-icons {
-    position: absolute;
-    margin-top: 2%;
+    margin-top: 50px;
 }
 
 .icons {
@@ -40,38 +58,7 @@ body {
     border-radius: 50%;
     margin-right: 20px;
     padding: 2px;
-    margin-bottom: 20px;
-    box-shadow: 8px 6px 8px #0a0a0a;
-
-}
-
-.grid-container {
-    display: grid;
-    width: 100vw;
-    /* background: rgb(0, 29, 43);
-    background: linear-gradient(180deg, rgba(0, 29, 43, 1) 0%, rgba(11, 24, 30, 1) 39%, rgba(20, 20, 20, 1) 100%); */
-
-    background: rgb(0,53,73);
-background: linear-gradient(180deg, rgba(0,53,73,1) 1%, rgba(11,35,44,1) 40%, rgba(20,20,20,1) 100%);
-    height: 100vh;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-    align-items: center;
-}
-
-.grid-item {
-    margin-top: -25%;
-    margin-left: 20%;
-}
-
-.image {
-    width: 45%;
-    height: auto;
-    margin-left: 20%;
-    background: #eaeaea;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    padding: 5px;
+    margin-bottom: 8%;
     box-shadow: 8px 6px 8px #0a0a0a;
 }
 
@@ -79,13 +66,31 @@ background: linear-gradient(180deg, rgba(0,53,73,1) 1%, rgba(11,35,44,1) 40%, rg
     float: inline-start;
     width: 22px;
     height: 22px;
-    margin-top: 8px;
+    margin-top: 6px;
     margin-right: 8px;
     filter: drop-shadow(2px 2px 2px #0a0a0a);
 }
 
-.head {
-    width: 100vw;
-    height: 6vh;
-    background: rgb(0, 138, 118);
+.image img {
+    width: 260px;
+    height: 260px;
+    align-self: center;
+    background: #eaeaea;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-shadow: 8px 6px 8px #0a0a0a;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .name1 {
+        font-size:3em; 
+    }
+    .profilename {
+        font-size: 1.2em;
+    }
+
 }
